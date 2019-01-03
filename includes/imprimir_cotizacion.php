@@ -44,7 +44,9 @@ $ajustes = Ajustes::obtener();
                     <tr>
                         <td><?php echo htmlentities($servicio->servicio) ?></td>
                         <td>{{<?php echo htmlentities($servicio->costo) ?> | dinero}}</td>
-                        <td>{{<?php echo htmlentities($servicio->tiempoEnMinutos * $servicio->multiplicador) ?> | minutosATiempo}}</td>
+                        <td>{{<?php echo htmlentities($servicio->tiempoEnMinutos * $servicio->multiplicador) ?> |
+                            minutosATiempo}}
+                        </td>
                     </tr>
                 <?php } ?>
                 </tbody>
@@ -86,7 +88,7 @@ $ajustes = Ajustes::obtener();
     </div>
     <div class="row">
         <div class="col-sm">
-            <button id="imprimir" class="btn btn-success d-print-none">Imprimir</button>
+            <button @click="imprimir" class="btn btn-success d-print-none">Imprimir</button>
         </div>
     </div>
     <div class="row">
@@ -97,12 +99,16 @@ $ajustes = Ajustes::obtener();
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        document.querySelector("#imprimir").addEventListener("click", () => {
-            let tituloOriginal = document.title;
-            document.title = "Cotización de <?php echo $cotizacion->descripcion ?> para <?php echo $cotizacion->razonSocial ?>";
-            window.print();
-            document.title = tituloOriginal;
+        new Vue({
+            el: "#app",
+            methods: {
+                imprimir() {
+                    let tituloOriginal = document.title;
+                    document.title = "Cotización de <?php echo htmlentities($cotizacion->descripcion) ?> para <?php echo htmlentities($cotizacion->razonSocial) ?>";
+                    window.print();
+                    document.title = tituloOriginal;
+                }
+            },
         });
-        new Vue({el: "#app"});
     });
 </script>
