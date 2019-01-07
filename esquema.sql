@@ -40,6 +40,12 @@ create table if not exists caracteristicas_cotizaciones(
     primary key(id),
     foreign key(idCotizacion) references cotizaciones(id) on delete cascade
 );
+create table if not exists usuarios(
+    id bigint unsigned not null auto_increment,
+    correo varchar(255) not null,
+    pass varchar(255) not null,
+    primary key(id)
+);
 /*Poner los primeros ajustes*/
 insert into ajustes
 (remitente, mensajePresentacion, mensajeAgradecimiento, mensajePie)
