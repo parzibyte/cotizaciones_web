@@ -14,9 +14,17 @@
 ; Las líneas en blanco y aquellas que comienzan
 ; con un punto y coma (;) son ignoradas
 
+; URL base del proyecto, algo como https://sitio.com
+BASE_URL = "http://localhost/cotizaciones"
+
 
 USUARIO_MYSQL = ""
 PASS_MYSQL = ""
 NOMBRE_BD_MYSQL = ""
 HOST_MYSQL = ""
 
+
+USUARIO_MYSQL_SESION = ""
+PASS_MYSQL_SESION = ""
+NOMBRE_BD_MYSQL_SESION = ""
+HOST_MYSQL_SESION = ""

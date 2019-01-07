@@ -30,18 +30,14 @@ class Utiles
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
         }
-        return hash_equals($_SESSION["token_csrf"], $token);
+        return hash_equals(SesionService::leer("token_csrf"), $token);
     }
 
     public static function obtenerTokenCSRF()
     {
-        # Sólo iniciamos la sesión si no la iniciamos antes
-        if (session_status() !== PHP_SESSION_ACTIVE) {
-            session_start();
-        }
         $token = self::generar_token_seguro(40);
-        $_SESSION["token_csrf"] = $token;
-        return $_SESSION["token_csrf"];
+        SesionService::escribir("token_csrf", $token, true);
+        return SesionService::leer("token_csrf");
     }
 
 }
