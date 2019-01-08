@@ -41,7 +41,7 @@ define("PAGINAS_SESION_REQUERIDA", [
 ]);
 # Aquellas que se pueden ver incluso sin iniciar sesión
 define("PAGINAS_SESION_NO_REQUERIDA", [
-    
+
     "login", "registro", "guardar_usuario",
     "iniciar_sesion", "logout",
 ]);
@@ -56,13 +56,17 @@ if (!in_array($pagina, PAGINAS_SESION_REQUERIDA) && !in_array($pagina, PAGINAS_S
     exit("No permitido. Este incidente será reportado");
 }
 # Ver si la sesión está iniciada...
-if(SesionService::obtenerIdUsuarioLogueado() !== NULL){
+if (SesionService::obtenerIdUsuarioLogueado() !== NULL) {
     # En caso de que sí, ver si debemos "denegarlas"
-    if(in_array($pagina, PAGINAS_REDIRIGIR_SI_SESION)){
+    if (in_array($pagina, PAGINAS_REDIRIGIR_SI_SESION)) {
         Utiles::redireccionar("cotizaciones");
     }
+} else {
+    # Si no, entonces vemos si intenta acceder a una protegida
+    if (in_array($pagina, PAGINAS_SESION_REQUERIDA)) {
+        Utiles::redireccionar("login&mensaje=2");
+    }
 }
-
 
 
 # Ahora la vista
