@@ -22,22 +22,22 @@ $tokenCSRF = Utiles::obtenerTokenCSRF();
                        id="pass" placeholder="Escribe tu contraseña">
             </div>
             <?php
-                if(isset($_GET["mensaje"])){ 
+            if (isset($_GET["mensaje"])) {
                 ?>
                 <br>
-                            <div class="alert alert-warning">
-                            <?php if($_GET["mensaje"] == "1") {?>
-                                El usuario o la contraseña no coinciden
-                            <?php } ?>
-                            <?php if($_GET["mensaje"] == "2") {?>
-                                Inicia sesión para acceder al contenido
-                            <?php } ?>
-                            <?php if($_GET["mensaje"] == "3") {?>
-                                Sesión cerrada, vuelve pronto
-                            <?php } ?>
-                            </div>
-                <?php } ?>
-            
+                <div class="alert alert-warning">
+                    <?php if ($_GET["mensaje"] == "1") { ?>
+                        El usuario o la contraseña no coinciden
+                    <?php } ?>
+                    <?php if ($_GET["mensaje"] == "2") { ?>
+                        Inicia sesión para acceder al contenido
+                    <?php } ?>
+                    <?php if ($_GET["mensaje"] == "3") { ?>
+                        Sesión cerrada, vuelve pronto
+                    <?php } ?>
+                </div>
+            <?php } ?>
+
             <button type="submit" class="btn btn-primary">Entrar <i class="fa fa-arrow-right"></i></button>
         </form>
     </div>

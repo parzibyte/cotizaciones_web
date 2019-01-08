@@ -1,4 +1,5 @@
 <?php
+
 /*
 Manejador de sesiones propio
 Recuerda crear una tabla así:
@@ -14,6 +15,7 @@ CREATE TABLE IF NOT EXISTS sesiones(
 @date 2018-06-28
 
  */
+
 class Sesion implements \SessionHandlerInterface
 {
 

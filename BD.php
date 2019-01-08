@@ -14,6 +14,7 @@ class BD
         $bd->query("SET NAMES 'utf8'");
         return $bd;
     }
+
     public static function obtenerParaSesion()
     {
         $bd = new PDO(
