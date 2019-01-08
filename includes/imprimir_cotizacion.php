@@ -25,39 +25,45 @@ $ajustes = Ajustes::obtener();
     <div class="row">
         <div class="col-sm">
             <br>
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Servicio</th>
-                    <th>Costo estimado</th>
-                    <th>Tiempo estimado</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                $costoTotal = 0;
-                $tiempoTotal = 0;
-                foreach ($servicios as $servicio) {
-                    $costoTotal += $servicio->costo;
-                    $tiempoTotal += $servicio->tiempoEnMinutos * $servicio->multiplicador;
-                    ?>
-                    <tr>
-                        <td><?php echo htmlentities($servicio->servicio) ?></td>
-                        <td>{{<?php echo htmlentities($servicio->costo) ?> | dinero}}</td>
-                        <td>{{<?php echo htmlentities($servicio->tiempoEnMinutos * $servicio->multiplicador) ?> |
-                            minutosATiempo}}
-                        </td>
-                    </tr>
-                <?php } ?>
-                </tbody>
-                <tfoot>
-                <tr>
-                    <td><strong>Total</strong></td>
-                    <td class="text-nowrap"><strong>{{<?php echo $costoTotal ?> | dinero}}</strong></td>
-                    <td class="text-nowrap"><strong>{{<?php echo $tiempoTotal ?> | minutosATiempo}}</strong></td>
-                </tr>
-                </tfoot>
-            </table>
+            <div class="table-responsive">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Servicio</th>
+                            <th>Costo estimado</th>
+                            <th>Tiempo estimado</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        $costoTotal = 0;
+                        $tiempoTotal = 0;
+                        foreach ($servicios as $servicio) {
+                            $costoTotal += $servicio->costo;
+                            $tiempoTotal += $servicio->tiempoEnMinutos * $servicio->multiplicador;
+                            ?>
+                            <tr>
+                                <td><?php echo htmlentities($servicio->servicio) ?></td>
+                                <td>{{<?php echo htmlentities($servicio->costo) ?> | dinero}}</td>
+                                <td>{{<?php echo htmlentities($servicio->tiempoEnMinutos * $servicio->multiplicador) ?>
+                                    |
+                                    minutosATiempo}}
+                                </td>
+                            </tr>
+                        <?php } ?>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td><strong>Total</strong></td>
+                            <td class="text-nowrap"><strong>{{<?php echo $costoTotal ?> | dinero}}</strong></td>
+                            <td class="text-nowrap"><strong>{{<?php echo $tiempoTotal ?> | minutosATiempo}}</strong>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">

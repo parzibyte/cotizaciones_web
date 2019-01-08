@@ -23,35 +23,37 @@ $tokenCSRF = Utiles::obtenerTokenCSRF();
 
 <div class="row">
     <div class="col-sm">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Cliente</th>
-                <th>Editar</th>
-                <th>Eliminar</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($clientes as $cliente) { ?>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
                 <tr>
-                    <td><?php echo $cliente->id ?></td>
-                    <td><?php echo htmlentities($cliente->razonSocial) ?></td>
-                    <td>
-                        <a class="btn btn-warning"
-                           href="<?php echo BASE_URL ?>/?p=editar_cliente&id=<?php echo $cliente->id ?>">
-                            <i class="fa fa-edit"></i>
-                        </a>
-                    </td>
-                    <td>
-                        <a class="btn btn-danger"
-                           href="<?php echo BASE_URL ?>/?p=eliminar_cliente&id=<?php echo $cliente->id ?>&tokenCSRF=<?php echo $tokenCSRF ?>">
-                            <i class="fa fa-trash"></i>
-                        </a>
-                    </td>
+                    <th>#</th>
+                    <th>Cliente</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
                 </tr>
-            <?php } ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                <?php foreach ($clientes as $cliente) { ?>
+                    <tr>
+                        <td><?php echo $cliente->id ?></td>
+                        <td><?php echo htmlentities($cliente->razonSocial) ?></td>
+                        <td>
+                            <a class="btn btn-warning"
+                               href="<?php echo BASE_URL ?>/?p=editar_cliente&id=<?php echo $cliente->id ?>">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger"
+                               href="<?php echo BASE_URL ?>/?p=eliminar_cliente&id=<?php echo $cliente->id ?>&tokenCSRF=<?php echo $tokenCSRF ?>">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                <?php } ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

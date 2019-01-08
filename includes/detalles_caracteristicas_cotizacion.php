@@ -23,62 +23,64 @@ $tokenCSRF = Utiles::obtenerTokenCSRF();
                     </div>
                     <div class="row">
                         <div class="col-sm">
-                            <table class="table table-striped">
-                                <thead>
-                                <tr>
-                                    <th>Servicio</th>
-                                    <th>Costo</th>
-                                    <th>Tiempo</th>
-                                    <th>Editar</th>
-                                    <th>Eliminar</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                $costoTotal = 0;
-                                $tiempoTotal = 0;
-                                ?>
-                                <?php
-                                foreach ($servicios as $servicio) {
-                                    $costoTotal += $servicio->costo;
-                                    $tiempoTotal += $servicio->tiempoEnMinutos * $servicio->multiplicador;
-                                    ?>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
                                     <tr>
-                                        <td><?php echo htmlentities($servicio->servicio) ?></td>
-                                        <td class="text-nowrap">{{<?php echo htmlentities($servicio->costo) ?> |
-                                            dinero}}
-                                        </td>
-                                        <td>
-                                            {{<?php echo htmlentities($servicio->tiempoEnMinutos * $servicio->multiplicador) ?>
-                                            | minutosATiempo}}
-                                        </td>
-                                        <td>
-                                            <a
-                                                    class="btn btn-warning"
-                                                    href="<?php printf('%s/?p=editar_servicio_de_cotizacion&idCotizacion=%s&idServicio=%s', BASE_URL, $cotizacion->id, $servicio->id) ?>">
-                                                <i class="fa fa-edit"></i>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a
-                                                    class="btn btn-danger"
-                                                    href="<?php printf('%s/?p=eliminar_servicio_de_cotizacion&idCotizacion=%s&tokenCSRF=%s&idServicio=%s', BASE_URL, $cotizacion->id, $tokenCSRF, $servicio->id) ?>">
-                                                <i class="fa fa-trash"></i>
-                                            </a>
-                                        </td>
+                                        <th>Servicio</th>
+                                        <th>Costo</th>
+                                        <th>Tiempo</th>
+                                        <th>Editar</th>
+                                        <th>Eliminar</th>
                                     </tr>
-                                <?php } ?>
-                                </tbody>
-                                <tfoot>
-                                <tr>
-                                    <td><strong>Total</strong></td>
-                                    <td class="text-nowrap"><strong>{{<?php echo htmlentities($costoTotal) ?> |
-                                            dinero}}</strong></td>
-                                    <td><strong>{{<?php echo $tiempoTotal ?> | minutosATiempo}}</strong></td>
-                                    <td colspan="2"></td>
-                                </tr>
-                                </tfoot>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                    $costoTotal = 0;
+                                    $tiempoTotal = 0;
+                                    ?>
+                                    <?php
+                                    foreach ($servicios as $servicio) {
+                                        $costoTotal += $servicio->costo;
+                                        $tiempoTotal += $servicio->tiempoEnMinutos * $servicio->multiplicador;
+                                        ?>
+                                        <tr>
+                                            <td><?php echo htmlentities($servicio->servicio) ?></td>
+                                            <td class="text-nowrap">{{<?php echo htmlentities($servicio->costo) ?> |
+                                                dinero}}
+                                            </td>
+                                            <td>
+                                                {{<?php echo htmlentities($servicio->tiempoEnMinutos * $servicio->multiplicador) ?>
+                                                | minutosATiempo}}
+                                            </td>
+                                            <td>
+                                                <a
+                                                        class="btn btn-warning"
+                                                        href="<?php printf('%s/?p=editar_servicio_de_cotizacion&idCotizacion=%s&idServicio=%s', BASE_URL, $cotizacion->id, $servicio->id) ?>">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a
+                                                        class="btn btn-danger"
+                                                        href="<?php printf('%s/?p=eliminar_servicio_de_cotizacion&idCotizacion=%s&tokenCSRF=%s&idServicio=%s', BASE_URL, $cotizacion->id, $tokenCSRF, $servicio->id) ?>">
+                                                    <i class="fa fa-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                    </tbody>
+                                    <tfoot>
+                                    <tr>
+                                        <td><strong>Total</strong></td>
+                                        <td class="text-nowrap"><strong>{{<?php echo htmlentities($costoTotal) ?> |
+                                                dinero}}</strong></td>
+                                        <td><strong>{{<?php echo $tiempoTotal ?> | minutosATiempo}}</strong></td>
+                                        <td colspan="2"></td>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -124,38 +126,40 @@ $tokenCSRF = Utiles::obtenerTokenCSRF();
                     <div class="alert alert-info">
                         <p>Las cosas que ayudan a describir la cotización</p>
                     </div>
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>Característica</th>
-                            <th>Editar</th>
-                            <th>Eliminar</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                        foreach ($caracteristicas as $caracteristica) {
-                            ?>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
                             <tr>
-                                <td><?php echo htmlentities($caracteristica->caracteristica); ?></td>
-                                <td>
-                                    <a
-                                            class="btn btn-warning"
-                                            href="<?php printf('%s/?p=editar_caracteristica_de_cotizacion&idCotizacion=%s&idCaracteristica=%s', BASE_URL, $cotizacion->id, $caracteristica->id) ?>">
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a
-                                            class="btn btn-danger"
-                                            href="<?php printf('%s/?p=eliminar_caracteristica_de_cotizacion&idCotizacion=%s&tokenCSRF=%s&idCaracteristica=%s', BASE_URL, $cotizacion->id, $tokenCSRF, $caracteristica->id) ?>">
-                                        <i class="fa fa-trash"></i>
-                                    </a>
-                                </td>
+                                <th>Característica</th>
+                                <th>Editar</th>
+                                <th>Eliminar</th>
                             </tr>
-                        <?php } ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                            <?php
+                            foreach ($caracteristicas as $caracteristica) {
+                                ?>
+                                <tr>
+                                    <td><?php echo htmlentities($caracteristica->caracteristica); ?></td>
+                                    <td>
+                                        <a
+                                                class="btn btn-warning"
+                                                href="<?php printf('%s/?p=editar_caracteristica_de_cotizacion&idCotizacion=%s&idCaracteristica=%s', BASE_URL, $cotizacion->id, $caracteristica->id) ?>">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a
+                                                class="btn btn-danger"
+                                                href="<?php printf('%s/?p=eliminar_caracteristica_de_cotizacion&idCotizacion=%s&tokenCSRF=%s&idCaracteristica=%s', BASE_URL, $cotizacion->id, $tokenCSRF, $caracteristica->id) ?>">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="col-sm-4">
                     <h3>Agregar característica</h3>
