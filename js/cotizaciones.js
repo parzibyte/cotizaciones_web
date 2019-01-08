@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const menu = document.querySelector("#menu"),
         botonMenu = document.querySelector("#botonMenu");
-    botonMenu.addEventListener("click", () => menu.classList.toggle("show"));
+    if (menu) {
+        botonMenu.addEventListener("click", () => menu.classList.toggle("show"));
+    }
     const minutosATiempo = minutos => {
         const leyenda = (numero, palabra, plural) => numero === 0 || numero > 1 ? `${numero} ${palabra}${plural || "s"}` : `${numero} ${palabra}`;
         const MINUTOS_POR_HORA = 60,
