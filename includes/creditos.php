@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-sm">
-        <h1>Sistema web para cotizaciones</h1>
+        <h1>Sistema web para cotizaciones o presupuestos</h1>
         <p>Hice el sistema porque personalmente necesitaba un software para cotizaciones que a veces son requeridas por
             mis clientes; como me cansé de utilizar Microsoft Word y guardar los archivos en mi disco duro, decidí crear
             un sistema que gestionara todo eso por mí.</p>
@@ -13,10 +13,10 @@
         <h2>Más software y herramientas</h2>
         <p>Échale un vistazo a la siguiente lista de otras cosas que he programado y que son 100 % gratuitas</p>
         <ul>
-            <li><a href="#">Cálculo del factorial de un número</a></li>
-            <li><a href="#">Explicar conversión numérica hexadecimal a decimal</a></li>
-            <li><a href="#">Convertir bases numéricas como binario, decimal, hexadecimal y octal</a></li>
-            <li><a href="#">Sistema de ventas gratuito</a></li>
+            <li><a href="https://www.parzibyte.me/apps/factorial/" target="_blank">Cálculo del factorial de un número</a></li>
+            <li><a href="https://www.parzibyte.me/apps/conversion-hexadecimal-decimal/" target="_blank">Explicar conversión numérica hexadecimal a decimal</a></li>
+            <li><a href="https://www.parzibyte.me/apps/conversor_bases/" target="_blank">Convertir bases numéricas como binario, decimal, hexadecimal y octal</a></li>
+            <li><a href="http://spos3.appsperfectas.com:2811/#/registro" target="_blank">Sistema de ventas gratuito</a></li>
         </ul>
         <h2>Contacto</h2>
         <p>
