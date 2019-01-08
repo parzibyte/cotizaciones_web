@@ -39,6 +39,8 @@ $tokenCSRF = Utiles::obtenerTokenCSRF();
             <?php } ?>
 
             <button type="submit" class="btn btn-primary">Entrar <i class="fa fa-arrow-right"></i></button>
+            <br>
+            <a href="<?php echo BASE_URL ?>?p=registro">Registrarme</a>
         </form>
     </div>
 </div>

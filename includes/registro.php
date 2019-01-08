@@ -31,6 +31,8 @@ $tokenCSRF = Utiles::obtenerTokenCSRF();
                        id="pass2" placeholder="Vuelve a escribir tu contraseña">
             </div>
             <button type="button" @click="registrar" class="btn btn-primary">Registrarme</button>
+            <br>
+            <a href="<?php echo BASE_URL ?>?p=login">Ya tengo una cuenta</a>
         </form>
     </div>
     <div class="col-sm-12 col-lg-4 offset-lg-4" v-show="mostrarAlertaPassNoCoincide">
