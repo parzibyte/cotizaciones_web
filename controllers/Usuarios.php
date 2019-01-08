@@ -7,7 +7,11 @@ class Usuarios
         $bd = BD::obtener();
         $sentencia = $bd->prepare("insert into usuarios(correo, pass) VALUES (?, ?);");
         $pass = password_hash(md5($pass), PASSWORD_DEFAULT);
-        return $sentencia->execute([$correo, $pass]);
+        $resultadoInsercion = $sentencia->execute([$correo, $pass]);
+        $idUsuario = $bd->lastInsertId();
+        $consulta = "insert into ajustes (idUsuario, remitente, mensajePresentacion, mensajeAgradecimiento, mensajePie)
+values ('$idUsuario', '', '', '', '');";
+        return $resultadoInsercion && $bd->exec($consulta);
     }
 
     public static function login($correo, $pass)

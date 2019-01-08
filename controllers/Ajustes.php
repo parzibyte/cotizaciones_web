@@ -9,14 +9,16 @@ class Ajustes
         remitente = ?,
         mensajePresentacion = ?,
         mensajeAgradecimiento = ?,
-        mensajePie = ? limit 1");
-        return $sentencia->execute([$remitente, $mensajePresentacion, $mensajeAgradecimiento, $mensajePie]);
+        mensajePie = ? 
+        where idUsuario = ?");
+        return $sentencia->execute([$remitente, $mensajePresentacion, $mensajeAgradecimiento, $mensajePie, SesionService::obtenerIdUsuarioLogueado()]);
     }
 
     public static function obtener()
     {
         $bd = BD::obtener();
-        $sentencia = $bd->query("select remitente, mensajePresentacion, mensajeAgradecimiento, mensajePie from ajustes;");
+        $sentencia = $bd->prepare("select remitente, mensajePresentacion, mensajeAgradecimiento, mensajePie from ajustes where idUsuario = ?;");
+        $sentencia->execute([SesionService::obtenerIdUsuarioLogueado()]);
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }
 }
