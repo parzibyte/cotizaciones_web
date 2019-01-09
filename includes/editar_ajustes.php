@@ -5,6 +5,16 @@ $tokenCSRF = Utiles::obtenerTokenCSRF();
 <div class="row">
     <div class="col-sm">
         <h1>Editar ajustes</h1>
+        <?php if (isset($_GET["mensaje"])) { ?>
+            <div class="alert alert-<?php echo($_GET["mensaje"] == "1" ? "success" : "danger") ?>">
+                <?php if ($_GET["mensaje"] == "1"): ?>
+                    Ajustes guardados
+                <?php endif; ?>
+                <?php if ($_GET["mensaje"] == "0"): ?>
+                    Error al guardar ajustes. Intenta de nuevo
+                <?php endif; ?>
+            </div>
+        <?php } ?>
     </div>
 </div>
 <div class="row">

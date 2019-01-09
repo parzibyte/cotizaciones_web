@@ -14,5 +14,5 @@ if (
 }
 Utiles::salirSiTokenCSRFNoCoincide($_POST["tokenCSRF"]);
 
-Ajustes::guardar($_POST["remitente"], $_POST["mensajePresentacion"], $_POST["mensajeAgradecimiento"], $_POST["mensajePie"]);
-Utiles::redireccionar("editar_ajustes");
+$resultado = Ajustes::guardar($_POST["remitente"], $_POST["mensajePresentacion"], $_POST["mensajeAgradecimiento"], $_POST["mensajePie"]);
+Utiles::redireccionar("editar_ajustes&mensaje=" . intval($resultado));
