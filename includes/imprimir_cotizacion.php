@@ -92,6 +92,13 @@ $ajustes = Ajustes::obtener();
             <?php endif ?>
         </div>
     </div>
+    <div class="row d-print-block d-sm-none">
+        <hr>
+        <div class="col-sm">
+            Cotización creada en AppsPerfectas. Crea tus cotizaciones y presupuestos en línea, totalmente gratis:
+            <strong>bit.ly/cotizaciones_app</strong>
+        </div>
+    </div>
     <div class="row">
         <div class="col-sm">
             <button @click="imprimir" class="btn btn-success d-print-none">Imprimir</button>
