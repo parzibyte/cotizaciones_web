@@ -16,7 +16,7 @@
             <li><a href="https://www.parzibyte.me/apps/factorial/" target="_blank">Cálculo del factorial de un número</a></li>
             <li><a href="https://www.parzibyte.me/apps/conversion-hexadecimal-decimal/" target="_blank">Explicar conversión numérica hexadecimal a decimal</a></li>
             <li><a href="https://www.parzibyte.me/apps/conversor_bases/" target="_blank">Convertir bases numéricas como binario, decimal, hexadecimal y octal</a></li>
-            <li><a href="http://spos3.appsperfectas.com:2811/#/registro" target="_blank">Sistema de ventas gratuito</a></li>
+            <li><a href="http://bit.ly/spos_3" target="_blank">Sistema de ventas gratuito</a></li>
         </ul>
         <h2>Contacto</h2>
         <p>
