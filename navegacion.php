@@ -19,8 +19,7 @@
                     <a class="nav-link" href="<?php echo BASE_URL ?>/?p=creditos">Acerca de</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo BASE_URL ?>/?p=logout">Salir
-                        (<?php echo htmlentities(SesionService::obtenerUsuarioLogueado()->correo) ?>)</a>
+                    <a class="nav-link" href="<?php echo BASE_URL ?>/?p=logout">Salir</a>
                 </li>
             </ul>
         </div>
