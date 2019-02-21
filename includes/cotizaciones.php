@@ -10,7 +10,6 @@ $tokenCSRF = Utiles::obtenerTokenCSRF();
     </div>
 </div>
 
-
 <div class="row">
     <div class="col-sm">
         <p>
@@ -19,6 +18,8 @@ $tokenCSRF = Utiles::obtenerTokenCSRF();
             </a>
         </p>
     </div>
+    
+    <?php include_once BASE_PATH . "/includes/publicidad.php" ?>
 </div>
 
 <div class="row">

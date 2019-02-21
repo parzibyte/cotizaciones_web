@@ -31,3 +31,6 @@ HOST_MYSQL_SESION = ""
 
 ; De Google Analytics
 ID_SEGUIMIENTO = ""
+; Publicidad
+AD_CLIENT = ""
+AD_SLOT = ""

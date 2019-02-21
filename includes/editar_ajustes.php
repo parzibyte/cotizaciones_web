@@ -34,6 +34,9 @@ $tokenCSRF = Utiles::obtenerTokenCSRF();
                           class="form-control"><?php echo htmlentities($ajustes->mensajePresentacion) ?></textarea>
             </div>
             <div class="form-group">
+                <?php include_once BASE_PATH . "/includes/publicidad.php" ?>
+            </div>
+            <div class="form-group">
                 <label for="mensajeAgradecimiento">Mensaje de agradecimiento</label>
                 <textarea placeholder="Mensaje que sale casi al final de la cotización" maxlength="255"
                           name="mensajeAgradecimiento" id="mensajeAgradecimiento" cols="30" rows="3"

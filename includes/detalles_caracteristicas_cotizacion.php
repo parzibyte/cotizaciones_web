@@ -121,6 +121,9 @@ $tokenCSRF = Utiles::obtenerTokenCSRF();
             </div>
             <hr>
             <div class="row">
+                <?php include_once BASE_PATH . "/includes/publicidad.php" ?>                
+            </div>
+            <div class="row">
                 <div class="col-sm-8">
                     <h3>Características</h3>
                     <div class="alert alert-info">

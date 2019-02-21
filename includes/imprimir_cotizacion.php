@@ -95,8 +95,8 @@ $ajustes = Ajustes::obtener();
     <div class="row d-print-block d-sm-none">
         <hr>
         <div class="col-sm">
-            Cotización creada en AppsPerfectas. Crea tus cotizaciones y presupuestos en línea, totalmente gratis:
-            <strong>bit.ly/cotizaciones_app</strong>
+            Cotización creada en línea. Crea tus cotizaciones y presupuestos online, totalmente gratis:
+            <strong>bit.ly/cotizaciones_online</strong>
         </div>
     </div>
     <div class="row">

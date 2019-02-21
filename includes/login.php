@@ -37,7 +37,11 @@ $tokenCSRF = Utiles::obtenerTokenCSRF();
                     <?php } ?>
                 </div>
             <?php } ?>
-
+            <div class="alert alert-danger">
+                <strong>¿Notas algo diferente?</strong>
+                hemos cambiado de dominio, pero tu usuario y contraseña deberían seguir funcionando. En caso de que no,
+                contacta al programador
+            </div>
             <button type="submit" class="btn btn-primary">Entrar <i class="fa fa-arrow-right"></i></button>
             <br>
             <a href="<?php echo BASE_URL ?>?p=registro">Registrarme</a>
