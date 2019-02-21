@@ -28,12 +28,12 @@
     <meta property="og:image"
           content="https://parzibyte.me/blog/wp-content/uploads/2019/01/Sistema-web-para-cotizaciones-y-presupuestos.png"/>
     <meta property="og:locale" content="es_LA"/>
-    <meta property="og:url" content="http://appsperfectas.com/app/cotizaciones"/>
-    <meta property="og:site_name" content="appsperfectas.com"/>
-    <meta property="og:title" content="Generador de cotizaciones y presupuestos | AppsPerfectas"/>
+    <meta property="og:url" content="https://www.parzibyte.me/apps/cotizaciones"/>
+    <meta property="og:site_name" content="parzibyte.me"/>
+    <meta property="og:title" content="Generador de cotizaciones y presupuestos | Parzibyte's apps"/>
     <meta property="og:description"
           content="Aplicación web para cotizaciones y presupuestos. Gestiona clientes, costos y tiempos"/>
-    <title>Generador de cotizaciones y presupuestos | AppsPerfectas</title>
+    <title>Generador de cotizaciones y presupuestos | Parzibyte's apps</title>
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/css/font-awesome.min.css">
     <style>

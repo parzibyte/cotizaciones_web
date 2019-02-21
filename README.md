@@ -44,7 +44,7 @@ Sobre la seguridad puedo decir que utilizo un [**token CSRF para evitar ataques 
 
 # Demostración y pruebas del software
 
-Puedes probar la aplicación web **[haciendo click aquí](http://bit.ly/cotizaciones_app) o entrando en bit.ly/cotizaciones_app**. 
+Puedes probar la aplicación web **[haciendo click aquí](http://bit.ly/cotizaciones_online) o entrando en bit.ly/cotizaciones_online**. 
 
 Funciona perfectamente; regístrate con tu correo electrónico y luego inicia sesión. El software es web, y por lo tanto **multiplataforma**. 
 
