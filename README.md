@@ -8,6 +8,9 @@ Aparte de eso, se cuenta con el apartado de los ajustes, en donde se personaliza
   
 Hice el sistema porque personalmente necesitaba un software para cotizaciones que a veces son requeridas por mis clientes; como me cansé de utilizar Microsoft Word y guardar los archivos en mi disco duro, decidí crear un sistema que gestionara todo eso por mí.
 
+# Instalación
+https://www.youtube.com/watch?v=3mz9_KS_rvU&feature=emb_logo
+
 
 # Características del software
 
