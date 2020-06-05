@@ -60,7 +60,9 @@ class SesionService
     public static function cerrarSesion()
     {
         self::init();
-        session_start();
+        if (!self::laSesionEstaIniciada()) {
+            session_start();
+        }
         session_destroy();
     }
 }
