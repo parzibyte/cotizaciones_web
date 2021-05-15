@@ -16,7 +16,7 @@ include_once BASE_PATH . "/controllers/Usuarios.php";
 
 define("BASE_URL", Comun::env("BASE_URL"));
 # Las páginas a las que solamente se puede acceder si la sesión está iniciada
-define("PAGINAS_SESION_REQUERIDA", [
+$PAGINAS_SESION_REQUERIDA = [
     # Clientes
     "clientes", "nuevo_cliente", "guardar_cliente",
     "editar_cliente", "actualizar_cliente", "eliminar_cliente",
@@ -38,32 +38,35 @@ define("PAGINAS_SESION_REQUERIDA", [
     "editar_ajustes", "actualizar_ajustes",
     # Acerca de
     "creditos",
-]);
+];
 # Aquellas que se pueden ver incluso sin iniciar sesión
-define("PAGINAS_SESION_NO_REQUERIDA", [
+$PAGINAS_SESION_NO_REQUERIDA = [
 
     "login", "registro", "guardar_usuario",
     "iniciar_sesion", "logout",
-]);
+];
 # Pero si la sesión está iniciada, no se puede acceder a estas y en cambio se redirige
-define("PAGINAS_REDIRIGIR_SI_SESION", [
+$PAGINAS_REDIRIGIR_SI_SESION = [
     "login", "registro", "guardar_usuario",
     "iniciar_sesion",
-]);
+];
 # Ver si está en nuestra lista de permitidos
-$pagina = $_GET["p"] ?? "cotizaciones";
-if (!in_array($pagina, PAGINAS_SESION_REQUERIDA) && !in_array($pagina, PAGINAS_SESION_NO_REQUERIDA)) {
+$pagina = "cotizaciones";
+if (isset($_GET["p"])) {
+    $pagina = $_GET["p"];
+}
+if (!in_array($pagina, $PAGINAS_SESION_REQUERIDA) && !in_array($pagina, $PAGINAS_SESION_NO_REQUERIDA)) {
     exit("No permitido. Este incidente será reportado");
 }
 # Ver si la sesión está iniciada...
 if (SesionService::obtenerIdUsuarioLogueado() !== NULL) {
     # En caso de que sí, ver si debemos "denegarlas"
-    if (in_array($pagina, PAGINAS_REDIRIGIR_SI_SESION)) {
+    if (in_array($pagina, $PAGINAS_REDIRIGIR_SI_SESION)) {
         Utiles::redireccionar("cotizaciones");
     }
 } else {
     # Si no, entonces vemos si intenta acceder a una protegida
-    if (in_array($pagina, PAGINAS_SESION_REQUERIDA)) {
+    if (in_array($pagina, $PAGINAS_SESION_REQUERIDA)) {
         Utiles::redireccionar("login&mensaje=2");
     }
 }

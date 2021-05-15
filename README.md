@@ -70,9 +70,10 @@ Aquí los requisitos para probar/montar el sistema:
   
   
 Necesita un servidor con *PHP y Apache*. La versión mínima  
-de PHP es la *7*, esto es debido a que se usa el operador _??_, la notación corta del arreglo _[]_  
-y otras cosas.  
-Claramente se podría crear una versión compatible con versiones anteriores, pero *no deseo que sea así*.  
+de PHP es la *5.6*, esto debido a que se usa la notación corta del arreglo `[]`.
+
+Ya es 2021 y existe PHP 8, pero incluso así, este software es compatible con la versión anteriormente mencionada.
+
 ## Extensiones  
 * PDO  
 ## Base de datos  

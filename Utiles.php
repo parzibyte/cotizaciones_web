@@ -21,7 +21,7 @@ class Utiles
             $longitud = 4;
         }
 
-        return bin2hex(random_bytes(($longitud - ($longitud % 2)) / 2));
+        return bin2hex(openssl_random_pseudo_bytes(($longitud - ($longitud % 2)) / 2));
     }
 
     public static function esTokenCSRFValido($token)
@@ -39,5 +39,4 @@ class Utiles
         SesionService::escribir("token_csrf", $token, true);
         return SesionService::leer("token_csrf");
     }
-
 }

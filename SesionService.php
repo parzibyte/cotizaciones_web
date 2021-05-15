@@ -18,7 +18,10 @@ class SesionService
     public static function leer($clave)
     {
         self::init();
-        return $_SESSION[$clave] ?? null;
+        if (isset($_SESSION[$clave])) {
+            return $_SESSION[$clave];
+        }
+        return null;
     }
 
     private static function init()
@@ -40,7 +43,10 @@ class SesionService
     public static function obtenerIdUsuarioLogueado()
     {
         self::init();
-        return $_SESSION["idUsuario"] ?? null;
+        if (isset($_SESSION["idUsuario"])) {
+            return $_SESSION["idUsuario"];
+        }
+        return null;
     }
 
     public static function obtenerUsuarioLogueado()
@@ -66,4 +72,3 @@ class SesionService
         session_destroy();
     }
 }
-

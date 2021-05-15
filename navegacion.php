@@ -6,16 +6,16 @@
         </button>
         <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav">
-                <li class="nav-item <?php echo $_GET["p"] === "clientes" ? 'active' : '' ?>">
+                <li class="nav-item <?php echo (isset($_GET["p"]) && $_GET["p"] === "clientes") ? 'active' : '' ?>">
                     <a class="nav-link" href="<?php echo BASE_URL ?>/?p=clientes">Clientes</a>
                 </li>
-                <li class="nav-item <?php echo $_GET["p"] === "cotizaciones" ? 'active' : '' ?>">
+                <li class="nav-item <?php echo (isset($_GET["p"]) && $_GET["p"] === "cotizaciones") ? 'active' : '' ?>">
                     <a class="nav-link" href="<?php echo BASE_URL ?>/?p=cotizaciones">Cotizaciones</a>
                 </li>
-                <li class="nav-item <?php echo $_GET["p"] === "editar_ajustes" ? 'active' : '' ?>">
+                <li class="nav-item <?php echo (isset($_GET["p"]) && $_GET["p"] === "editar_ajustes") ? 'active' : '' ?>">
                     <a class="nav-link" href="<?php echo BASE_URL ?>/?p=editar_ajustes">Ajustes</a>
                 </li>
-                <li class="nav-item <?php echo $_GET["p"] === "creditos" ? 'active' : '' ?>">
+                <li class="nav-item <?php echo (isset($_GET["p"]) && $_GET["p"] === "creditos") ? 'active' : '' ?>">
                     <a class="nav-link" href="<?php echo BASE_URL ?>/?p=creditos">Acerca de</a>
                 </li>
                 <li class="nav-item">
