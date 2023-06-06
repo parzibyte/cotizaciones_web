@@ -4,7 +4,7 @@ class Utiles
 {
     public static function redireccionar($lugar)
     {
-        header("Location: " . BASE_URL . "/?p=$lugar");
+        printf("<script>window.location.href='%s';</script>", BASE_URL . "/?p=$lugar");
         exit;
     }
 
